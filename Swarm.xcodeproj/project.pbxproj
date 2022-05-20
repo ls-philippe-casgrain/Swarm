@@ -11,6 +11,9 @@
 		4AAA7CE92837FC12005329A3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAA7CE82837FC12005329A3 /* ContentView.swift */; };
 		4AAA7CEB2837FC14005329A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AAA7CEA2837FC14005329A3 /* Assets.xcassets */; };
 		4AAA7CEE2837FC14005329A3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AAA7CED2837FC14005329A3 /* Preview Assets.xcassets */; };
+		4AAA7CF62837FC3E005329A3 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAA7CF52837FC3E005329A3 /* ViewModel.swift */; };
+		4AAA7CF828381282005329A3 /* Bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAA7CF728381282005329A3 /* Bee.swift */; };
+		4AAA7D2B28382953005329A3 /* Numbers in Resources */ = {isa = PBXBuildFile; fileRef = 4AAA7D2A28382953005329A3 /* Numbers */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +23,9 @@
 		4AAA7CEA2837FC14005329A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4AAA7CED2837FC14005329A3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4AAA7CEF2837FC14005329A3 /* Swarm.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Swarm.entitlements; sourceTree = "<group>"; };
+		4AAA7CF52837FC3E005329A3 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		4AAA7CF728381282005329A3 /* Bee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bee.swift; sourceTree = "<group>"; };
+		4AAA7D2A28382953005329A3 /* Numbers */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Numbers; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +59,9 @@
 			isa = PBXGroup;
 			children = (
 				4AAA7CE62837FC12005329A3 /* SwarmApp.swift */,
+				4AAA7CF728381282005329A3 /* Bee.swift */,
+				4AAA7D2A28382953005329A3 /* Numbers */,
+				4AAA7CF52837FC3E005329A3 /* ViewModel.swift */,
 				4AAA7CE82837FC12005329A3 /* ContentView.swift */,
 				4AAA7CEA2837FC14005329A3 /* Assets.xcassets */,
 				4AAA7CEF2837FC14005329A3 /* Swarm.entitlements */,
@@ -127,6 +136,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AAA7D2B28382953005329A3 /* Numbers in Resources */,
 				4AAA7CEE2837FC14005329A3 /* Preview Assets.xcassets in Resources */,
 				4AAA7CEB2837FC14005329A3 /* Assets.xcassets in Resources */,
 			);
@@ -139,7 +149,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AAA7CF828381282005329A3 /* Bee.swift in Sources */,
 				4AAA7CE92837FC12005329A3 /* ContentView.swift in Sources */,
+				4AAA7CF62837FC3E005329A3 /* ViewModel.swift in Sources */,
 				4AAA7CE72837FC12005329A3 /* SwarmApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct SwarmApp: App {
+
+    let viewModel = ViewModel()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(viewModel: viewModel)
         }
     }
 }
