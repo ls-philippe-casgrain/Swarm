@@ -23,7 +23,7 @@ protocol ViewModelType: ObservableObject {
 
 class ViewModel: ViewModelType {
 
-    @Published var bees: [Bee] = [Bee(id: 0, message: "Just a bee")]
+    @Published var bees: [Bee] = [Bee(id: 1, message: "Just a bee")]
 
     var swarmCount: Double {
         get {

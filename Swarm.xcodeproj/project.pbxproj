@@ -14,6 +14,8 @@
 		4AAA7CF62837FC3E005329A3 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAA7CF52837FC3E005329A3 /* ViewModel.swift */; };
 		4AAA7CF828381282005329A3 /* Bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAA7CF728381282005329A3 /* Bee.swift */; };
 		4AAA7D2B28382953005329A3 /* Numbers in Resources */ = {isa = PBXBuildFile; fileRef = 4AAA7D2A28382953005329A3 /* Numbers */; };
+		4AAA7D2E283830CE005329A3 /* ClientConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAA7D2C283830CE005329A3 /* ClientConnection.swift */; };
+		4AAA7D2F283830CE005329A3 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAA7D2D283830CE005329A3 /* Client.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		4AAA7CF52837FC3E005329A3 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		4AAA7CF728381282005329A3 /* Bee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bee.swift; sourceTree = "<group>"; };
 		4AAA7D2A28382953005329A3 /* Numbers */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Numbers; sourceTree = "<group>"; };
+		4AAA7D2C283830CE005329A3 /* ClientConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientConnection.swift; sourceTree = "<group>"; };
+		4AAA7D2D283830CE005329A3 /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,8 @@
 			isa = PBXGroup;
 			children = (
 				4AAA7CE62837FC12005329A3 /* SwarmApp.swift */,
+				4AAA7D2D283830CE005329A3 /* Client.swift */,
+				4AAA7D2C283830CE005329A3 /* ClientConnection.swift */,
 				4AAA7CF728381282005329A3 /* Bee.swift */,
 				4AAA7D2A28382953005329A3 /* Numbers */,
 				4AAA7CF52837FC3E005329A3 /* ViewModel.swift */,
@@ -151,7 +157,9 @@
 			files = (
 				4AAA7CF828381282005329A3 /* Bee.swift in Sources */,
 				4AAA7CE92837FC12005329A3 /* ContentView.swift in Sources */,
+				4AAA7D2F283830CE005329A3 /* Client.swift in Sources */,
 				4AAA7CF62837FC3E005329A3 /* ViewModel.swift in Sources */,
+				4AAA7D2E283830CE005329A3 /* ClientConnection.swift in Sources */,
 				4AAA7CE72837FC12005329A3 /* SwarmApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
