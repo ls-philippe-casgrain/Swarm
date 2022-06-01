@@ -14,7 +14,7 @@ class ClientConnection {
     var didStopCallback: ((Error?) -> Void)? = nil
 
     func start() {
-        print("connection will start")
+        print("\(nwConnection) connection will start")
         nwConnection.stateUpdateHandler = stateDidChange(to:)
         setupReceive()
         nwConnection.start(queue: queue)
@@ -23,12 +23,12 @@ class ClientConnection {
     private func stateDidChange(to state: NWConnection.State) {
         switch state {
         case .waiting(let error):
-            print("connectionDidFail \(error)")
+            print("\(nwConnection) connectionDidFail \(error)")
             connectionDidFail(error: error)
         case .ready:
-            print("Client connection ready")
+            print("\(nwConnection) Client connection ready")
         case .failed(let error):
-            print("connectionDidFail \(error)")
+            print("\(nwConnection) connectionDidFail \(error)")
             connectionDidFail(error: error)
         default:
             break
@@ -39,7 +39,7 @@ class ClientConnection {
         nwConnection.receive(minimumIncompleteLength: 1, maximumLength: 65536) { (data, _, isComplete, error) in
             if let data = data, !data.isEmpty {
                 let message = String(data: data, encoding: .utf8)
-                print("connection did receive, data: \(data as NSData) string: \(message ?? "-" )")
+                print("connection \(self.nwConnection) did receive, data: \(data as NSData) string: \(message ?? "-" )")
             }
             if isComplete {
                 self.connectionDidEnd()
@@ -51,28 +51,33 @@ class ClientConnection {
         }
     }
 
-    func send(data: Data) {
+    public typealias SendHandler = @convention(block) () -> Void
+
+    func send(data: Data, handler: SendHandler? = nil) {
         nwConnection.send(content: data, completion: .contentProcessed( { error in
             if let error = error {
                 self.connectionDidFail(error: error)
                 return
             }
-                print("connection did send, data: \(data as NSData)")
+            print("connection \(self.nwConnection) did send, data: \(data as NSData)")
+            if let handler = handler {
+                handler()
+            }
         }))
     }
 
     func stop() {
-        print("connection will stop")
+        print("connection \(nwConnection) will stop")
         stop(error: nil)
     }
 
     private func connectionDidFail(error: Error) {
-        print("connection did fail, error: \(error)")
+        print("connection \(nwConnection) did fail, error: \(error)")
         self.stop(error: error)
     }
 
     private func connectionDidEnd() {
-        print("connection did end")
+        print("connection \(nwConnection) did end")
         self.stop(error: nil)
     }
 

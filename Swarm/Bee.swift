@@ -13,7 +13,7 @@ struct Bee: Identifiable {
 
     let message: String
 
-    let client = Client(host: "10.50.28.91", port: 9100)
+    let host: String
 
     func sendToPrinter() {
         let label = String(format: "%02d", id)
@@ -37,13 +37,16 @@ struct Bee: Identifiable {
 
     private func sendToNetworkPrinter(message: Data) {
 
+        let client = Client(host: host, port: 9100)
+
         client.start()
         client.connection.send(data: Data([0x1B, 0x40])) // Initialize
 //        client.connection.send(data: Data([0x1D, 0x61, 0x04])) // Real-time status
         client.connection.send(data: Data([0x1B, 0x2D, 0x00]))
         client.connection.send(data: message)
-        client.connection.send(data: Data([0x00, 0x1D, 0x56, 0x41, 0x03]))
-        client.connection.stop()
+        client.connection.send(data: Data([0x00, 0x1D, 0x56, 0x41, 0x03])) {
+//            client.connection.stop()
+        }
 //        client.connection.send(data: "Hello, world".data(using: .ascii)!)
 //        client.connection.send(data: Data([0x00, 0x1D, 0x56, 0x41, 0x03])) // Close
 //        client.stop()

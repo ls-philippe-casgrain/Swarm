@@ -14,6 +14,13 @@ struct ContentView<Model: ViewModelType>: View {
     var body: some View {
         VStack {
             HStack {
+                Text("IP address")
+                TextField(
+                    "IP address",
+                    text: self.$viewModel.ipAddress
+                )
+            }.padding()
+            HStack {
                 Text("Number of bees")
                 Slider(
                     value: self.$viewModel.swarmCount,
@@ -60,10 +67,11 @@ struct ContentView_Previews: PreviewProvider {
 
 fileprivate class TestViewModel: ViewModelType {
 
-    var bees: [Bee] = [Bee(id: 0, message: "Test bee")]
+    var bees: [Bee] = [Bee(id: 0, message: "Test bee", host: "127.0.0.1")]
 
     var message: String = "Sphinx of black quartz, judge my vow"
     var swarmCount: Double = 3.0
+    var ipAddress: String = "127.0.0.1"
 
     var cancel: () -> Void = {}
     var swarm: () -> Void = {}
